@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knee Osteoarthritis Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Knee Osteoarthritis Detection</h1>
+    </header>
+
+    <main class="main-content">
+        <div class="image-container1">
+            {% if not upload_wali_filename and not segmented_image_filename %}
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required>
+                <br><br>
+                <button type="submit">Upload</button>
+            </form>
+            {% endif %}
+            {% if upload_wali_filename %}
+            <div class="image-wrapper">
+                <h2>Uploaded Image</h2>
+                <img src="{{ url_for('static', filename=upload_wali_filename) }}" class="result-image">
+            </div>
+            {% endif %}
+            {% if segmented_image_filename %}
+            <div class="image-wrapper">
+                <h2>Segmented Image</h2>
+                <img src="{{ url_for('static', filename=segmented_image_filename) }}" class="result-image">
+            </div>
+            {% endif %}
+        </div>
+
+        {% if prediction_text %}
+        <div class="image-container2">
+            {% if prediction_text %}
+                <div class="prediction">
+                    <h2>Prediction</h2>
+                    <p>{{ prediction_text }}</p>
+                </div>
+            {% endif %}
+            {% if upload_wali_filename or segmented_image_filename %}
+            <form action="/" method="get">
+                <button type="submit">Upload Another Image</button>
+            </form>
+            {% endif %}
+        </div>
+        {% endif %}
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 IBM UPES GROUP 75. All rights reserved.</p>
+    </footer>
+</body>
+</html>

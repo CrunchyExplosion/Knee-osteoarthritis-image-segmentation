@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processed Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Knee Osteoarthritis Detection</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Processed Image</h2>
+        <div class="image-container">
+            <div class="image-wrapper">
+                <h3>Uploaded Image</h3>
+                <img src="{{ url_for('static', filename=filename) }}" class="result-image">
+            </div>
+            <div class="image-wrapper">
+                <h3>Segmented Image</h3>
+                <img src="{{ url_for('static', filename=segmented_image_filename) }}" class="result-image">
+            </div>
+        </div>
+        <br><br>
+        <a href="/">Upload Another Image</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
