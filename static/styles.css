@@ -1,0 +1,83 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body covers at least the viewport height */
+}
+
+header {
+    background-color: #72aeed;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.main-content {
+    flex: 1; /* Ensure main content expands to fill remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content horizontally */
+    padding: 20px;
+}
+
+.image-container1, .image-container2 {
+    max-width: 800px;
+    width: 100%; /* Ensure containers take full width */
+    margin-bottom: 20px; /* Add spacing between containers */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.image-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap within container */
+}
+
+.image-wrapper {
+    margin: 20px;
+    text-align: center;
+}
+
+.result-image {
+    height: 190px;
+    width: 190px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    background-color: #72aeed;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%; /* Ensure footer spans full width */
+}
+
